@@ -17,7 +17,7 @@ library(gapminder)
 p <- ggplot(data = gapminder,
             mapping = aes(x = gdpPercap,
                           y = lifeExp))
-p + geom_point() + geom_smooth(method = "lm") 
+p + geom_point() + geom_smooth(method = "lm") + scale_x_log10()
 ```
 
 ```{r pressure, echo=FALSE}
