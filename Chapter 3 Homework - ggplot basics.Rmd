@@ -35,3 +35,20 @@ p1 + geom_point(mapping = aes(color = continent)) +
     geom_smooth(method = "loess") +
     scale_x_log10()
 ```
+
+## Original Graph
+
+```{r mpg, message = FALSE, warning = FALSE, echo = FALSE}
+o <- ggplot(data = mpg, aes(x = displ, y = hwy, color = class)) + 
+  geom_point() +  
+  labs(title = "Fuel Efficiency by Engine Power",
+       subtitle = "Fuel economy data from 1999 and 2008 for 38 popular models of cars",       
+       caption = "See more at https://ggplot2.tidyverse.org/",
+       x = "Engine power (litres displacement)",
+       y = "Fuel Efficiency (miles per gallon)",
+       color = "Car Type") + 
+  annotate("text", x = 6, y = 40,
+    label = "hwy and displ are \n negatively correlated \n (rho = -0.77, p-value < 0.001)",
+    size = 3)
+o
+```
