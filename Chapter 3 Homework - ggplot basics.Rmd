@@ -7,6 +7,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+pacman::p_load(tidyverse,nycflights13,gapminder,socviz)
 library(tidyverse)
 library(gapminder)
 ```
@@ -23,15 +24,14 @@ p + geom_point(alpha = 0.3) + geom_smooth(method = "lm") + scale_x_log10(labels 
          subtitle = "Data points are country-years",
          caption = "Source: Gapminder.")
 ```
+
 ## 3.16 Recreation
 
 ```{r gapminder1, message = FALSE, warning = FALSE, echo = FALSE}
 p1 <- ggplot(data = gapminder,
             mapping = aes(x = gdpPercap,
-                          y = lifeExp,
-                          color = continent,
-                          fill = continent))
-p1 + geom_point() +
+                          y = lifeExp))
+p1 + geom_point(mapping = aes(color = continent)) +
     geom_smooth(method = "loess") +
     scale_x_log10()
 ```
