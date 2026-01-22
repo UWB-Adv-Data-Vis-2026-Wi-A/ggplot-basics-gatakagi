@@ -1,0 +1,25 @@
+---
+title: "Chapter 3 Homework - ggplot basics"
+author: "Gavin Penttila"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(gapminder)
+```
+
+## 3.13 Recreation
+
+```{r gapminder, message = FALSE, warning = FALSE, echo = FALSE}
+p <- ggplot(data = gapminder,
+            mapping = aes(x = gdpPercap,
+                          y = lifeExp))
+p + geom_point() + geom_smooth() 
+```
+
+```{r pressure, echo=FALSE}
+
+```
